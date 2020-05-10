@@ -6,12 +6,17 @@ interface ILandingPageProps {
 }
 
 class LandingPage extends React.Component<ILandingPageProps> {
+
+    handleClick = () => {
+        alert("clicked")
+    }
+
     render () {
         return (
             <div className={style.container}>
                 <div>
                     <h1>{this.props.appName}</h1>
-                    <p>App is running</p>
+                    <p onClick={this.handleClick}>App is running</p>
                 </div>
             </div>
         )
