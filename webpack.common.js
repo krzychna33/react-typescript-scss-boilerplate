@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-    watch: true,
     entry: [
         path.join(__dirname, 'src', 'app.tsx')
     ],
@@ -25,7 +24,18 @@ module.exports = {
                         modules: true
                     }
                 },
-                "sass-loader" ] },
+                "sass-loader" ]},
+            {
+                test: /\.css$/,
+                use: [{
+                    loader: 'style-loader'
+                }, {
+                    loader: 'css-loader',
+                    options: {
+                        sourceMap: true,
+                    }
+                }]
+            },
             { test: /\.tsx?$/, loader: "babel-loader" },
             { test: /\.tsx?$/, loader: "ts-loader" },
             { test: /\.(png|svg|jpg|gif)$/, use: ['file-loader']},

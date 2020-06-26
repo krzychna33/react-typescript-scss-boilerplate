@@ -3,20 +3,27 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "12.16.2"
+  },
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "dev": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "build:server": "webpack --config webpack.prod.js && node server/server.js",
-    "server:start": "node server/server.js"
+    "build:server": "webpack --config webpack.prod.js && npm run start",
+    "start": "ts-node server/server.ts",
+    "heroku-postbuild": "npm run build"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/express": "^4.17.6",
     "core-js": "^3.6.4",
+    "express": "^4.17.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
   },
   "devDependencies": {
+    "ts-node": "^8.10.2",
     "@babel/core": "^7.8.6",
     "@babel/preset-env": "^7.8.6",
     "@babel/preset-react": "^7.8.3",

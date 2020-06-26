@@ -1,9 +1,13 @@
-
 .container {
     width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #fff20b;
+    background-color: #FFF;
+}
+
+.kittyPhoto {
+    width: 200px;
+    height: auto;
 }

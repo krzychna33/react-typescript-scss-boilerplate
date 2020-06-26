@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "outDir": "dist/",
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "target": "es2015"
+  },
+  "include": [
+    "server.ts"
+  ]
+}
